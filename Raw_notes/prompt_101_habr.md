@@ -29,7 +29,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 1/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -66,7 +67,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 2/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -97,7 +99,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 3/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -124,7 +127,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 4/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -157,7 +161,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 5/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -193,7 +198,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 6/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -226,7 +232,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 7/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -260,7 +267,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 8/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -296,7 +304,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 9/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -327,7 +336,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 10/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -360,7 +370,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 11/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -394,7 +405,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 12/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -425,7 +437,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 13/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -455,7 +468,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 14/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -472,7 +486,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 15/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -488,7 +503,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 16/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -521,7 +537,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 17/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -558,7 +575,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 18/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -598,7 +616,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 19/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -633,7 +652,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 20/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -665,7 +685,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 21/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -697,7 +718,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 22/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -730,7 +752,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 23/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -759,7 +782,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 24/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -784,7 +808,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 25/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -812,7 +837,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 26/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -845,7 +871,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 27/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -873,7 +900,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 28/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -900,7 +928,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 29/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -936,7 +965,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 30/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -966,7 +996,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 31/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -994,7 +1025,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 32/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -1027,7 +1059,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 33/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -1063,7 +1096,8 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 34/35
 
-10/27/26, 4:07 PM
+
+10/27/26, 4:07 PM
 
 Prompt engineering 101 / Хабр
 
@@ -1089,4 +1123,4 @@ https://habr.com/ru/companies/X5Tech/articles/827878/?ysclid=mvqoyv3iy320336771
 
 35/35
 
-
+
