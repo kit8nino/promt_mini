@@ -92,3 +92,57 @@ Integrate this function into CI/CD pipelines for generated code.
 ---  
 
 *By combining rigorous ethical safeguards with systematic evaluation, you can deploy LLM‑powered systems that are both useful and responsible.*  
+
+![AI Ethics Risk Categories](images/lecture04_ethics_risks.png "AI Ethics Risk Categories: Bias & Fairness, Privacy Leakage, Hallucination, Malicious Use, Environmental Impact")
+
+
+![Risk Categories Detail](images/lecture04_risk_categories.png "Risk Categories with Examples: Bias (gendered jobs), Privacy (PII), Hallucination (false facts), Malicious (exploits), Environmental (compute)")
+
+
+![Mitigation Techniques](images/lecture04_mitigation_techniques.png "Mitigation Techniques: Dataset Curation, Bias Testing, Prompt Safeguards, Output Filtering, Human-in-the-loop, Rate Limiting, Model Distillation")
+
+
+![Evaluation Pipeline](images/lecture04_evaluation_pipeline.png "Evaluation Pipeline: Generate → Self-Evaluate / Critic Prompt / Unit Tests / Schema Validation → Verdict → Log")
+
+
+![Evaluation Techniques](images/lecture04_evaluation_techniques.png "Evaluation Techniques: Self-Evaluation, Critic Prompt, Unit-Test Generation, Schema Validation, Metric-based Scoring")
+
+
+![Automated Evaluation Flow](images/lecture04_automated_evaluation_flow.png "Automated Evaluation Flow: Generate → Evaluate → Verdict → CI/CD Integration")
+
+
+![AI Ethics Risk Categories](images/lecture04_ethics_risks.png "AI Ethics Risk Categories: Bias & Fairness, Privacy Leakage, Hallucination, Malicious Use, Environmental Impact")
+
+
+![Risk Categories Detail](images/lecture04_risk_categories.png "Risk Categories with Examples: Bias (gendered jobs), Privacy (PII), Hallucination (false facts), Malicious (exploits), Environmental (compute)")
+
+
+![Mitigation Techniques](images/lecture04_mitigation_techniques.png "Mitigation Techniques: Dataset Curation, Bias Testing, Prompt Safeguards, Output Filtering, Human-in-the-loop, Rate Limiting, Model Distillation")
+
+
+![Evaluation Pipeline](images/lecture04_evaluation_pipeline.png "Evaluation Pipeline: Generate → Self-Evaluate / Critic Prompt / Unit Tests / Schema Validation → Verdict → Log")
+
+
+![Evaluation Techniques](images/lecture04_evaluation_techniques.png "Evaluation Techniques: Self-Evaluation, Critic Prompt, Unit-Test Generation, Schema Validation, Metric-based Scoring")
+
+
+![Automated Evaluation Flow](images/lecture04_automated_evaluation_flow.png "Automated Evaluation Flow: Generate → Evaluate → Verdict → CI/CD Integration")
+
+
+![AI Ethics Risk Categories](images/lecture04_ethics_risks.png "AI Ethics Risk Categories: Bias & Fairness, Privacy Leakage, Hallucination, Malicious Use, Environmental Impact")
+
+
+![Risk Categories Detail](images/lecture04_risk_categories.png "Risk Categories with Examples: Bias (gendered jobs), Privacy (PII), Hallucination (false facts), Malicious (exploits), Environmental (compute)")
+
+
+![Mitigation Techniques](images/lecture04_mitigation_techniques.png "Mitigation Techniques: Dataset Curation, Bias Testing, Prompt Safeguards, Output Filtering, Human-in-the-loop, Rate Limiting, Model Distillation")
+
+
+![Evaluation Pipeline](images/lecture04_evaluation_pipeline.png "Evaluation Pipeline: Generate → Self-Evaluate / Critic Prompt / Unit Tests / Schema Validation → Verdict → Log")
+
+
+![Evaluation Techniques](images/lecture04_evaluation_techniques.png "Evaluation Techniques: Self-Evaluation, Critic Prompt, Unit-Test Generation, Schema Validation, Metric-based Scoring")
+
+
+![Automated Evaluation Flow](images/lecture04_automated_evaluation_flow.png "Automated Evaluation Flow: Generate → Evaluate → Verdict → CI/CD Integration")
+

@@ -1,16 +1,27 @@
-# Lecture 01 – Introduction to Generative AI, LLM Architecture, and Context
+# Лекция 01 – Введение в генеративный ИИ, архитектуру LLM и контекст
 
-## 1. What is Generative AI?
+## 1. Что такое генеративный ИИ?
 
-Generative AI – a class of models that can create new content (text, code, images, audio) from a prompt. The most common type today is the **large language model (LLM)**, which predicts the next token in a sequence of tokens.
+Генеративный ИИ – класс моделей, способных создавать новый контент (текст, код, изображения, аудио) по запросу (промпту). Наиболее распространенный тип сегодня – **большие языковые модели (LLM)**, которые предсказывают следующий токен в последовательности токенов.
 
-### Why does it matter for developers?
+### Почему это важно для разработчиков?
 
-- **Code assistance** – tools like GitHub Copilot, CodeLlama, StarCoder.  
-- **Documentation & summarisation** – automatically generate API docs, release notes.  
-- **Idea generation** – brainstorm architectures, write tests, create UI copy.
+- **Помощь в коде** – инструменты вроде GitHub Copilot, CodeLlama, StarCoder
+- **Документация и суммаризация** – автоматическая генерация API-документации, заметок к релизу
+- **Генерация идей** – мозговой штурм архитектур, написание тестов, создание UI-текстов
+- **Помощь в коде** – инструменты вроде GitHub Copilot, CodeLlama, StarCoder.
+- **Документация и суммаризация** – автоматическая генерация API-документации, заметок к релизу.
+- **Генерация идей** – мозговой штурм архитектур, написание тестов, создание UI-текстов.
 
-## 2. Core concepts (high‑level)
+### Почему это важно для разработчиков?
+
+ **Помощь в коде** – инструменты вроде GitHub Copilot, CodeLlama, StarCoder
+ **Документация и суммаризация** – автоматическая генерация API-документации, заметок к релизу
+ **Генерация идей** – мозговой штурм архитектур, написание тестов, создание UI-текстов
+
+## 2. Основные понятия (общий уровень)
+
+![Core LLM Concepts](images/lecture01_core_concepts.png "Основные понятия LLM: Токен, Контекстное окно, Промпт, Temperature, Fine-tuning")
 
 | Concept | Short description |
 |--------|-------------------|
@@ -19,8 +30,15 @@ Generative AI – a class of models that can create new content (text, code, ima
 | **Prompt** | The text you give the model – it can contain system instructions, user request, examples. |
 | **Temperature / Top‑p** | Sampling parameters that control randomness vs. determinism. |
 | **Fine‑tuning / Instruction‑tuning** | Adapting a base model to a specific domain or style. |
+| **Токен** | Минимальная единица, с которой работает модель (кусочек слова, суб‑слово, знак препинания) |
+| **Контекстное окно** | Количество недавних токенов, которые модель может учитывать (например, 4 096 токенов) |
+| **Промпт** | Текст, который вы даете модели – может содержать системные инструкции, запрос пользователя, примеры |
+| **Temperature / Top‑p** | Параметры сэмплирования, управляющие случайностью против детерминизма |
+| **Файн‑тьюнинг / Инструкция‑тьюнинг** | Адаптация базовой модели к конкретной предметной области или стилю |
 
-## 3. LLM Architecture (Устройство LLM и особенности её работы)
+## 3. Архитектура LLM (Устройство LLM и особенности её работы)
+
+![LLM Architecture Overview](images/lecture01_architecture_overview.png "Обзор архитектуры LLM: Токенизация, Эмбеддинги, Трансформер‑слои, Выходной слой")
 
 ### 3.1 Что такое LLM (Large Language Model) на самом деле
 
@@ -28,9 +46,13 @@ LLM — это огромный статистический вычисли�
 
 ### 3.2 Токен и токенизация
 
+![Tokenization Example](images/lecture01_tokenization.png "Пример токенизации: Текст → Токены → ID токенов")
+
 Токен — это элементарная единица, с которой работает модель. Токенизация преобразует произвольный текст в последовательность индексов из фиксированного словаря, аналогично дискретизации сигнала.
 
 ### 3.3 Контекстное окно
+
+![Context Window Illustration](images/lecture01_context_window.png "Иллюстрация контекстного окна: Скользящее окно токенов, которые модель может учитывать")
 
 Контекстное окно — это ограниченный набор последних токенов, которые модель может одновременно учитывать. Практически все современные LLM используют окна длиной от 2 048 до 4 096 токенов. Ограничение обусловлено квадратичной сложностью механизма внимания.
 
@@ -40,45 +62,67 @@ LLM — это огромный статистический вычисли�
 
 ### 3.5 Механизм внимания
 
+![Attention Mechanism](images/lecture01_attention_mechanism.png "Механизм внимания: Матрицы Q, K, V и вычисление весов внимания")
+
 Механизм внимания (attention) вычисляет взаимную корреляцию между всеми парами токенов внутри контекстного окна, используя запросы (Q), ключи (K) и значения (V).
 
 ### 3.6 Природа галлюцинаций
 
 Галлюцинации возникают из‑за того, что модель оперирует лишь вероятностным распределением, а не истинной семантикой. При ограниченном контекстном окне модель может «забыть» важные детали, что усиливает вероятность генерации неверного текста.
 
-## 4. Context Window & System Prompt (Lecture 1b)
+## 4. Контекстное окно и системный промпт (Лекция 1b)
 
-### 4.1 The role of the context window
+![Context Window with System Prompt](images/lecture01_context_system_prompt.png "Контекстное окно с системным промптом: Системный промпт в позиции 0, за ним история диалога")
 
-- The **context window** is the set of the most recent tokens that the model can attend to when generating the next token.  
-- Modern LLMs typically have windows of **2 048 – 4 096 tokens**.  
-- Anything that falls outside this window is **invisible** to the model and cannot influence the answer.
+### 4.1 Роль контекстного окна
 
-### 4.2 Why it matters for prompting
+- **Контекстное окно** — это набор самых недавних токенов, которые модель может учитывать при генерации следующего токена
+- Современные LLM обычно имеют окна **2 048 – 4 096 токенов**
+- Всё, что выходит за пределы этого окна, **невидимо** для модели и не может влиять на ответ
+- **Контекстное окно** — это набор самых недавних токенов, которые модель может учитывать при генерации следующего токена.
+- Современные LLM обычно имеют окна **2 048 – 4 096 токенов**.
+- Всё, что выходит за пределы этого окна, **невидимо** для модели и не может влиять на ответ.
+### 4.1 Роль контекстного окна
+
+ **Контекстное окно** — это набор самых недавних токенов, которые модель может учитывать при генерации следующего токена
+ Современные LLM обычно имеют окна **2 048 – 4 096 токенов**
+ Всё, что выходит за пределы этого окна, **невидимо** для модели и не может влиять на ответ
+
+### 4.2 Почему это важно для промптинга
 
 | Situation | Effect if the information is inside the window | Effect if it is outside |
 |-----------|-----------------------------------------------|------------------------|
 | Long code base | Model can reference earlier definitions, variable names, imports. | Model “forgets” earlier definitions → broken code. |
 | Multi‑turn conversation | Model remembers previous user messages and its own answers. | Model loses the thread, may repeat or contradict itself. |
+| Ситуация | Эффект, если информация внутри окна | Эффект, если она снаружи |
+| Длинная кодовая база | Модель может ссылаться на ранние определения, имена переменных, импорты | Модель «забывает» ранние определения → сломанный код |
+| Многотурный диалог | Модель помнит предыдущие сообщения пользователя и свои ответы | Модель теряет нить, может повторяться или противоречить себе |
 
-### 4.3 System Prompt vs. User Prompt
+### 4.3 Системный промпт против пользовательского промпта
 
-- **System prompt** sets the **persona, role, and high‑level behavior** of the model.  
-- **User prompt** contains the concrete request, data, or question.
+**Системный промпт** задаёт **персону, роль и высокоуровневое поведение** модели.
+**Пользовательский промпт** содержит конкретный запрос, данные или вопрос.
 
 ```
-System: Ты — senior backend‑разработчик. Твоя задача — давать короткие, технически точные ответы без лишних пояснений.  
-User: Как реализовать кеширование запросов в FastAPI?
+System: Ты — senior backend‑разработчик. Твоя задача — давать короткие, технически точные ответы без лишних пояснений.
 ```
+![System vs User Prompt Structure](images/lecture01_system_user_prompt.png "Системный промпт vs Пользовательский промпт: Системный промпт фиксируется в начале, пользовательские накапливаются")
 
-The system prompt is processed **once** at the beginning of the session and stays at the start of the token sequence, ensuring the model always has the role information in its context.
+Системный промпт обрабатывается **один раз** в начале сессии и остаётся в начале последовательности токенов, обеспечивая постоянное наличие информации о роли в контексте модели.
 
-### 4.4 Practical tips
+### 4.4 Практические советы
 
-1. **Place the system prompt first** – guarantees the role stays within the context window for the longest possible time.  
-2. **Keep the system prompt concise** – every token counts; a 30‑token system prompt is usually enough.  
-3. **Refresh the role** if you anticipate a very long interaction: resend a short reminder (`You are still the senior backend‑developer`).
+1. **Разместите системный промпт первым** – гарантирует, что роль останется в контекстном окне максимально долго
+2. **Держите системный промпт кратким** – каждый токен на счету; 30 токенов обычно достаточно
+3. **Обновляйте роль**, если предвидите очень длинное взаимодействие: отправьте короткое напоминание (`Ты по-прежнему senior backend‑разработчик`)
 
 ---  
 
-*This lecture provides the foundational knowledge required before diving into prompt engineering techniques.*  
+*Эта лекция даёт базовые знания, необходимые перед погружением в техники промпт‑инжиниринга.*
+
+
+
+
+
+
+![System vs User Prompt Structure](images/lecture01_system_user_prompt.png "Системный промпт vs Пользовательский промпт: Системный промпт фиксируется в начале, пользовательские накапливаются")

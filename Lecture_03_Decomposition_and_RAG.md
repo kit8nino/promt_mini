@@ -1,14 +1,14 @@
-# Lecture 03 – Task Decomposition, Prompt Chaining, and Retrieval‑Augmented Generation (RAG)
+# Лекция 03 – Декомпозиция задач, чейнинг промптов и генерация с дополнением извлечёнными данными (RAG)
 
-## 1. Task Decomposition for AI Agents
+## 1. Декомпозиция задач для ИИ‑агентов
 
-### 1.1 Why Decomposition Matters
+### 1.1 Почему декомпозиция важна
 
-- **Одно действие** – задача должна описываться глаголом («сгенерировать», «проанализировать», «сравнить»).  
-- **Ясный контракт** – модель знает, что от неё требуется, и выдаёт предсказуемый результат.  
-- **Контекст + Инструкция + Формат** – три базовых блока, без которых модель будет «угадывать» ответ.
+- **Одно действие** – задача должна описываться глаголом («сгенерировать», «проанализировать», «сравнить»)
+- **Ясный контракт** – модель знает, что от неё требуется, и выдаёт предсказуемый результат
+- **Контекст + Инструкция + Формат** – три базовых блока, без которых модель будет «угадывать» ответ
 
-### 1.2 Standard Decomposition Template
+### 1.2 Стандартный шаблон декомпозиции
 
 ```
 Ты — [роль/персона].
@@ -42,25 +42,43 @@
 | 3 | Ты — senior Python‑разработчик.<br>Контекст: отфильтрованный массив из шага 2.<br>Задача: вывести его как строку JSON.<br>Формат вывода: строка JSON. |
 
 ## 2. Retrieval‑Augmented Generation (RAG)
+## 2. Генерация с дополнением извлечёнными данными (RAG)
 
 ### 2.1 What is RAG?
+### 2.1 Что такое RAG?
 
-RAG combines a **retriever** (search over a document collection) with a **generator** (LLM). The retriever fetches relevant passages, which are then injected into the prompt as additional context.
+RAG сочетает **ретривер** (поиск по коллекции документов) с **генератором** (LLM). Ретривер находит релевантные фрагменты, которые затем внедряются в промпт как дополнительный контекст.
 
 #### Why use RAG?
+#### Зачем использовать RAG?
 
 - **Up‑to‑date information** – the model can answer questions about recent events.  
 - **Domain specificity** – you can provide proprietary documentation, API specs, or code bases.  
-- **Reduced hallucinations** – the model grounds its answer in real text.
+- **Актуальная информация** – модель может отвечать на вопросы о недавних событиях.
+- **Предметная специфика** – вы можете предоставлять закрытую документацию, спецификации API, кодовые базы.
+- **Меньше галлюцинаций** – модель подкрепляет ответ реальным текстом.
 
 ### 2.2 Basic RAG workflow
+### 2.2 Базовый рабочий процесс RAG
 
 1. **Query** – the user’s question.  
 2. **Retriever** – e.g., BM25, dense vector search (FAISS, Elasticsearch). Returns top‑k passages.  
 3. **Prompt construction** – prepend retrieved passages to the user prompt, optionally with a system prompt that explains the role of the passages.  
+![RAG Architecture](images/lecture03_rag_architecture.png "RAG Architecture: Query → Retriever (Vector Search) → Top-k Passages → Prompt Construction → LLM Generator → Answer")
+
+![RAG Workflow Steps](images/lecture03_rag_workflow.png "RAG Workflow: 1. Query 2. Retriever 3. Prompt Construction 4. Generation")
+
+1. **Query** – the user’s question.
+2. **Retriever** – e.g., BM25, dense vector search (FAISS, Elasticsearch). Returns top‑k passages.
+3. **Prompt construction** – prepend retrieved passages to the user prompt, optionally with a system prompt that explains the role of the passages.
 4. **Generation** – LLM produces the final answer.
+1. **Запрос** – вопрос пользователя.
+2. **Ретривер** – например, BM25, плотный векторный поиск (FAISS, Elasticsearch). Возвращает top‑k фрагментов.
+3. **Построение промпта** – добавьте извлечённые фрагменты к пользовательскому промпту, опционально с системным промптом, объясняющим их роль.
+4. **Генерация** – LLM выдаёт финальный ответ.
 
 ### 2.3 Implementation sketch (Python)
+### 2.3 Схема реализации (Python)
 
 ```python
 from sentence_transformers import SentenceTransformer
@@ -87,6 +105,7 @@ def generate_answer(query):
 ```
 
 ### 2.4 Tips & pitfalls (RAG)
+### 2.4 Советы и подводные камни (RAG)
 
 | Tip | Reason |
 |-----|--------|
@@ -94,17 +113,27 @@ def generate_answer(query):
 | **Add a clear instruction** that passages are *authoritative* | Prevents the model from ignoring them. |
 | **Validate the final output** (JSON schema, unit tests) | Guarantees that retrieved data was used correctly. |
 | **Refresh the index** when documents change | Keeps the knowledge base current. |
+| **Ограничьте количество фрагментов** (3‑5) | Держит потребление токенов низким и уменьшает шум |
+| **Добавьте чёткую инструкцию**, что фрагменты *авторитетны* | Предотвращает игнорирование их моделью |
+| **Валидируйте итоговый вывод** (JSON‑схема, юнит‑тесты) | Гарантирует, что извлечённые данные использованы правильно |
+| **Обновляйте индекс** при изменении документов | Поддерживает базу знаний актуальной |
 
-## 3. Combining Decomposition & RAG
+## 3. Комбинирование декомпозиции и RAG
 
-You can retrieve external knowledge **at each step** of a chained workflow. For example:
+![Decomposition + RAG Pipeline](images/lecture03_decomposition_rag_pipeline.png "Декомпозиция + RAG: На каждом шаге извлекается релевантный контекст → Обработка → Передача к следующему шагу")
 
-1. **Step 1** – Retrieve API documentation, then ask the model to generate a function skeleton.  
-2. **Step 2** – Retrieve performance benchmarks, then ask the model to suggest optimizations.  
-3. **Step 3** – Retrieve security guidelines, then ask the model to audit the generated code.
+Вы можете извлекать внешние знания **на каждом шаге** цепочечного рабочего процесса. Например:
 
-This pattern yields highly grounded, modular solutions that are easier to test and verify.
+Этот паттерн даёт высоко обоснованные, модульные решения, которые легче тестировать и верифицировать.
 
 ---  
 
+*Используйте шаблон декомпозиции для структурирования сложных запросов и обогащайте каждый атомарный шаг RAG, когда нужны внешние факты.*
+
 *Use the decomposition template to structure complex requests, and enrich each atomic step with RAG when external facts are required.*  
+
+
+
+
+
+![Decomposition + RAG Pipeline](images/lecture03_decomposition_rag_pipeline.png "Декомпозиция + RAG: На каждом шаге извлекается релевантный контекст → Обработка → Передача к следующему шагу")
