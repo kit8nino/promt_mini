@@ -80,6 +80,36 @@ Prompt‑engineering — это дисциплина точного форм
 | **Retrieval‑Augmented Generation (RAG)** | Добавляет внешние документы в контекст | `Use the following excerpts …` и включите релевантный текст |
 | **Prompt‑Chaining** | Разбивает большую задачу на последовательные шаги, передавая результат каждого в следующий | Формат: `Step 1 → … → Step N` |
 | **Role Anchoring** | Поддерживает персону модели стабильной в длинных диалогах | Включите неизменяемый блок идентичности в системный промпт |
+| **Few‑Shot / One‑Shot** | Калибрует модель на примерах ввода‑вывода | Включите 2‑5 пар `Input:` / `Output:` в начале промпта |
+| **Chain‑of‑Thought (CoT)** | Просит модель рассуждать шаг за шагом | Добавьте `think step‑by‑step` или `Разбей задачу на шаги и объясни каждый` |
+| **Ask‑Before‑Answer** | Модель задаёт уточняющие вопросы перед ответом | Включите `Ask questions for clarification before generating your answer` |
+| **Self‑Consistency** | Запустите один промпт несколько раз, выберите самый частый ответ | Выполните 3‑5 запусков, затем агрегируйте (большинство голосов, медиана) |
+| **Self‑Evaluation** | После генерации модель проверяет свой вывод | Добавьте `Please evaluate your answer and point out possible issues` |
+| **Конструктивная критика** | Прямая просьба о честной критике | `Criticize my code` или `Provide a critical review of the solution` |
+| **Эмоциональный промптинг** | Повышает воспринимаемую важность задачи | `This is very important for my career` или `I need a perfect answer` |
+| **Retrieval‑Augmented Generation (RAG)** | Добавляет внешние документы в контекст | `Use the following excerpts …` и включите релевантный текст |
+| **Prompt‑Chaining** | Разбивает большую задачу на последовательные шаги, передавая результат каждого в следующий | Формат: `Step 1 → … → Step N` |
+| **Role Anchoring** | Поддерживает персону модели стабильной в длинных диалогах | Включите неизменяемый блок идентичности в системный промпт |
+| **Few‑Shot / One‑Shot** | Калибрует модель на примерах ввода‑вывода | Включите 2‑5 пар `Input:` / `Output:` в начале промпта |
+| **Chain‑of‑Thought (CoT)** | Просит модель рассуждать шаг за шагом | Добавьте `think step‑by‑step` или `Разбей задачу на шаги и объясни каждый` |
+| **Ask‑Before‑Answer** | Модель задаёт уточняющие вопросы перед ответом | Включите `Ask questions for clarification before generating your answer` |
+| **Self‑Consistency** | Запустите один промпт несколько раз, выберите самый частый ответ | Выполните 3‑5 запусков, затем агрегируйте (большинство голосов, медиана) |
+| **Self‑Evaluation** | После генерации модель проверяет свой вывод | Добавьте `Please evaluate your answer and point out possible issues` |
+| **Конструктивная критика** | Прямая просьба о честной критике | `Criticize my code` или `Provide a critical review of the solution` |
+| **Эмоциональный промптинг** | Повышает воспринимаемую важность задачи | `This is very important for my career` или `I need a perfect answer` |
+| **Retrieval‑Augmented Generation (RAG)** | Добавляет внешние документы в контекст | `Use the following excerpts …` и включите релевантный текст |
+| **Prompt‑Chaining** | Разбивает большую задачу на последовательные шаги, передавая результат каждого в следующий | Формат: `Step 1 → … → Step N` |
+| **Role Anchoring** | Поддерживает персону модели стабильной в длинных диалогах | Включите неизменяемый блок идентичности в системный промпт |
+| **Few‑Shot / One‑Shot** | Калибрует модель на примерах ввода‑вывода | Включите 2‑5 пар `Input:` / `Output:` в начале промпта |
+| **Chain‑of‑Thought (CoT)** | Просит модель рассуждать шаг за шагом | Добавьте `think step‑by‑step` или `Разбей задачу на шаги и объясни каждый` |
+| **Ask‑Before‑Answer** | Модель задаёт уточняющие вопросы перед ответом | Включите `Ask questions for clarification before generating your answer` |
+| **Self‑Consistency** | Запустите один промпт несколько раз, выберите самый частый ответ | Выполните 3‑5 запусков, затем агрегируйте (большинство голосов, медиана) |
+| **Self‑Evaluation** | После генерации модель проверяет свой вывод | Добавьте `Please evaluate your answer and point out possible issues` |
+| **Конструктивная критика** | Прямая просьба о честной критике | `Criticize my code` или `Provide a critical review of the solution` |
+| **Эмоциональный промптинг** | Повышает воспринимаемую важность задачи | `This is very important for my career` или `I need a perfect answer` |
+| **Retrieval‑Augmented Generation (RAG)** | Добавляет внешние документы в контекст | `Use the following excerpts …` и включите релевантный текст |
+| **Prompt‑Chaining** | Разбивает большую задачу на последовательные шаги, передавая результат каждого в следующий | Формат: `Step 1 → … → Step N` |
+| **Role Anchoring** | Поддерживает персону модели стабильной в длинных диалогах | Включите неизменяемый блок идентичности в системный промпт |
 
 ### Комбинирование техник
 
