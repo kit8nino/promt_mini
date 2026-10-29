@@ -4,21 +4,15 @@
 
 | Module | Key take‑aways |
 |--------|---------------|
-| **Lecture 0** | High‑level view of Generative AI, core concepts, limitations. |
-| **Lecture 1** | Architecture of LLMs: tokens, attention, context window, hallucinations. |
-| **Lecture 1b** | Interaction of system prompt, user prompt, and context window. |
-| **Lecture 2** | Prompt‑engineering intro: three‑component template, role formula, few‑shot, good vs. bad prompts. |
-| **Lecture 3** | Prompt‑engineering techniques (few‑shot, CoT, RAG, chaining, etc.). |
-| **Lecture 4** | Retrieval‑Augmented Generation (RAG) basics and implementation sketch. |
-| **Lecture 5** | Task decomposition, prompt chaining, atomic sub‑tasks. |
-| **Lecture 6** | Ethics and safety considerations, risk categories, mitigation checklist. |
-| **Lecture 7** | Evaluation, self‑critique, automated pipelines, schema validation. |
-| **Lab 0** | Intro to Generative AI – simple API call and token usage. |
-| **Lab 1** | Tokenization, context window limits, visualisation. |
-| **Lab 2** | Build your first prompt with three‑component template and few‑shot. |
-| **Lab 3** | Task decomposition and prompt chaining in a notebook. |
-| **Lab 4** | Retrieval‑Augmented Generation – indexing, retrieval, prompt construction. |
-| **Lab 5** | Ethics reflection – bias, privacy, hallucination, malicious‑use safeguards. |
+| **Lecture 01** | High‑level view of Generative AI, core concepts (token, context, temperature), LLM architecture, and the importance of the system prompt & context window. |
+| **Lecture 02** | Prompt‑engineering fundamentals: three‑component template, role formula, style guide, and a toolbox of techniques (few‑shot, CoT, Ask‑Before‑Answer, Self‑Evaluation, RAG, Prompt‑Chaining). |
+| **Lecture 03** | Task decomposition methodology, prompt chaining, and how to enrich each step with Retrieval‑Augmented Generation (RAG). |
+| **Lecture 04** | Risks (bias, privacy, hallucination, malicious use), mitigation checklist, and systematic evaluation/self‑critique pipelines. |
+| **Lab 0** | Simple API call, print response, view token usage. |
+| **Lab 1** | Tokenization, context window limits, visualisation of sliding window. |
+| **Lab 2** | Build a prompt using the three‑component template, add few‑shot, request step‑by‑step answer. |
+| **Lab 3** | Decompose a complex request, implement prompt chaining, validate JSON output. |
+| **Lab 4** | Implement a basic RAG pipeline with FAISS and OpenAI API. |
 
 ## 2. Practical labs recap  
 
@@ -29,7 +23,6 @@
 | **Lab 2** | Construct a prompt using the three‑component template, add few‑shot, request step‑by‑step answer. |
 | **Lab 3** | Decompose a complex request, implement prompt chaining, validate JSON output. |
 | **Lab 4** | Implement a basic RAG pipeline with FAISS and OpenAI API. |
-| **Lab 5** | Reflect on ethical considerations and write mitigation strategies. |
 
 ## 3. Next steps for learners  
 
