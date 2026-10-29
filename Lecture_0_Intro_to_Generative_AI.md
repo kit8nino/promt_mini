@@ -49,6 +49,10 @@ def factorial(n):
 4. Task decomposition and building AI‑agents.  
 5. Evaluation, self‑critique, and production‑ready pipelines.  
 
+## Wrap‑up
+
+In this introductory lecture we covered the fundamental ideas behind generative AI, the core concepts such as tokens, context windows, prompts, and temperature, and highlighted why these notions matter for developers. This sets the stage for the deeper technical dive in the next lecture.
+
 ---  
 
 *Proceed to Lecture 1: LLM Architecture.*  

@@ -50,3 +50,7 @@ Understanding these risks is the first step toward responsible AI development.
 ---  
 
 *Ethical AI is a continuous process: iterate, monitor, and improve.*  
+
+## Wrap‑up
+
+This lecture highlighted the key risk categories associated with generative AI and presented concrete mitigation strategies. By integrating these practices into your development workflow, you help ensure that AI systems are safe, fair, and trustworthy.  

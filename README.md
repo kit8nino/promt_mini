@@ -8,17 +8,14 @@ All content is written in a mix of Russian and English to reflect the original c
 ## Table of Contents
 
 ### Lectures
-- [Lecture 1: Introduction to Generative AI](Lecture_1_Intro_to_Generative_AI.md)
+- [Lecture 0: Introduction to Generative AI](Lecture_0_Intro_to_Generative_AI.md)
 - [Lecture 1: LLM Architecture](Lecture_1_LLM_Architecture.md)
 - [Lecture 1b: Context and Prompt Interaction](Lecture_1b_Context_and_Prompt_Interaction.md)
 - [Lecture 2: Prompt Engineering Introduction](Lecture_Prompt_Engineering_Intro.md)
-- [Lecture 3: Prompt Techniques](Lecture_Prompt_Techniques.md)
-- [Lecture 4: Task Decomposition](Lecture_Task_Decomposition.md)
-- [Lecture 5: Evaluation and Self‑Critique](Lecture_Evaluation_and_Self_Critique.md)
-- [Lecture 6: Retrieval‑Augmented Generation (RAG)](Lecture_RAG_and_External_Knowledge.md)
-- [Lecture 7: Ethics and Safety](Lecture_Ethics_and_Safety.md)
-- [Appendix: Role Anchors](Appendix_Role_Anchors.md)
-- [Style Guide for Prompts](Style_Guide_for_Prompts.md)
+- [Lecture 3: Task Decomposition](Lecture_Task_Decomposition.md)
+- [Lecture 4: Evaluation and Self‑Critique](Lecture_Evaluation_and_Self_Critique.md)
+- [Lecture 5: Retrieval‑Augmented Generation (RAG)](Lecture_RAG_and_External_Knowledge.md)
+- [Lecture 6: Ethics and Safety](Lecture_Ethics_and_Safety.md)
 
 ### Labs
 - [Lab 0: Intro to Generative AI](Lab_0_Intro_to_Generative_AI.ipynb)
