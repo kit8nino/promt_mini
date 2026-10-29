@@ -8,7 +8,7 @@ All content is written in a mix of Russian and English to reflect the original c
 ## Table of Contents
 
 ### Lectures
-- [Lecture 0: Introduction to Generative AI](Lecture_0_Intro_to_Generative_AI.md)
+- [Lecture 1: Introduction to Generative AI](Lecture_1_Intro_to_Generative_AI.md)
 - [Lecture 1: LLM Architecture](Lecture_1_LLM_Architecture.md)
 - [Lecture 1b: Context and Prompt Interaction](Lecture_1b_Context_and_Prompt_Interaction.md)
 - [Lecture 2: Prompt Engineering Introduction](Lecture_Prompt_Engineering_Intro.md)
