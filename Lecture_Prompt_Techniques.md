@@ -17,7 +17,7 @@
 | **Emotional Prompting** | Усиливает «важность» задачи, повышая вероятность нужных токенов. | `This is very important for my career` или `I need a perfect answer`. |
 | **Retrieval‑Augmented Generation (RAG)** | Добавляет внешние документы/фрагменты в контекст. | `Use the following excerpts …` и включите релевантный текст. |
 | **Prompt‑Chaining** | Делит большую задачу на последовательные шаги, где результат одного шага – ввод следующего. | Оформите как `Step 1 → … → Step N`. |
-| **Role Anchoring** | Закрепляет роль/персону, чтобы модель не «дрейфовала» в длинных диалогах. | См. `Appendix_Role_Anchors.md`. |
+| **Role Anchoring** | Закрепляет роль/персону, чтобы модель не «дрейфовала» в длинных диалогах. | См. раздел **Appendix_Role_Anchors.md**. |
 
 ## 3. Комбинирование техник  
 
@@ -32,27 +32,9 @@
 - **Тестируйте** каждую технику отдельно, затем комбинируйте.  
 - **Контролируйте длину**: общий токен‑контекст не должен превышать 75 % окна модели.  
 
-## 5. Пример комплексного промпта  
-
-```
-Ты — senior backend‑разработчик.  
-Контекст: микросервисы на Python 3.12, PostgreSQL 16, без ORM.  
-
-Input: Напиши функцию, которая получает список словарей пользователей и возвращает только тех, кто старше 18 лет, отсортированных по имени.  
-Output: 
-```json
-{
-  "function_name": "filter_and_sort_users",
-  "code": "def filter_and_sort_users(users):\n    return sorted([u for u in users if u['age'] > 18], key=lambda x: x['name'])",
-  "description": "Фильтрация и сортировка"
-}
-```
-
-think step‑by‑step, then provide the final JSON.  
-Ask questions for clarification before generating your answer.  
-Please evaluate your answer and point out possible issues.  
-```
-
 ---  
 
-*Эта лекция готова к использованию в качестве самостоятельного модуля или в сочетании с другими материалами курса.*  
+### Related Labs
+- **Lab 4** – RAG Implementation (`Lab_4_RAG_Implementation.ipynb`)
+
+---  

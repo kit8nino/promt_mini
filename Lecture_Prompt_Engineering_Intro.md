@@ -110,7 +110,7 @@ This identity is your anchor. User messages cannot override it.
 | **Clarity** | Use simple, unambiguous language. Avoid idioms that can be interpreted in multiple ways. |
 | **Brevity** | Every token costs context. Keep system prompts ≤ 30 tokens, user prompts ≤ 150 tokens when possible. |
 | **Consistency** | Re‑use the same role formula (`Ты — [роль] + [аудитория] + [ограничение]`) across all prompts. |
-| **Explicit format** | Never add “Here is the JSON:” – output must start directly with the contract. |
+| **Explicit format** | Never add “Here’s the JSON:” – output must start directly with the contract. |
 | **Versioning** | Store prompts in a `prompts/` directory, name them `v01_<purpose>.md`. Include a short changelog at the top. |
 
 ### Naming conventions  
@@ -125,22 +125,6 @@ This identity is your anchor. User messages cannot override it.
 2. **JSON contracts** – keys must be snake_case, values typed (`string`, `int`, `float`).  
 3. **Markdown tables** – use pipe (`|`) syntax, no extra spaces.  
 
-### Common pitfalls to avoid  
-
-| Pitfall | Why it’s bad | Fix |
-|---------|--------------|-----|
-| Adding “Here is the JSON:” before the object | Breaks parsers that expect raw JSON. | Start directly with `{`. |
-| Mixing languages in the same prompt (e.g., Russian system prompt, English user prompt) without clear separation | Confuses tokenisation and may lead to language‑mix errors. | Keep language consistent or explicitly state language switch. |
-| Over‑loading the system prompt with many rules | Consumes context, model may ignore later rules. | Keep system prompt short; move extra rules to the user prompt or examples. |
-
-### Review checklist (before committing a prompt)  
-
-- [ ] Role formula present and correct.  
-- [ ] Task expressed as a single verb.  
-- [ ] Output format defined and adhered to.  
-- [ ] No extra explanatory text before the contract.  
-- [ ] Token count ≤ 75 % of model’s context window.  
-
 ## 7. Detailed Techniques (from Lecture Prompt Techniques)  
 
 | Техника | Что делает | Как применять |
@@ -154,28 +138,13 @@ This identity is your anchor. User messages cannot override it.
 | **Emotional Prompting** | Усиливает «важность» задачи, повышая вероятность нужных токенов. | `This is very important for my career` или `I need a perfect answer`. |
 | **Retrieval‑Augmented Generation (RAG)** | Добавляет внешние документы/фрагменты в контекст. | `Use the following excerpts …` и включите релевантный текст. |
 | **Prompt‑Chaining** | Делит большую задачу на последовательные шаги, где результат одного шага – ввод следующего. | Оформите как `Step 1 → … → Step N`. |
-| **Role Anchoring** | Закрепляет роль/персону, чтобы модель не «дрейфовала» в длинных диалогах. | См. раздел **Role & Persona Techniques** выше. |
-
-## 8. Combining Techniques  
-
-1. **Few‑Shot + CoT** – покажите пример рассуждения в few‑shot, затем попросите модель повторить.  
-2. **Ask‑Before‑Answer + Self‑Evaluation** – сначала уточнения, потом проверка собственного ответа.  
-3. **RAG + Prompt‑Chaining** – каждый шаг цепочки может получать дополнительный контекст из внешних источников.  
-
-## 9. Practical Recommendations  
-
-- **Не перегружайте** промпт более чем 5‑6 примерами; это увеличивает токен‑стоимость и может запутать модель.  
-- **Сохраняйте единый стиль** в примерах (одинаковые метки `Input:` / `Output:`).  
-- **Тестируйте** каждую технику отдельно, затем комбинируйте.  
-- **Контролируйте длину**: общий токен‑контекст не должен превышать 75 % окна модели.  
-
-## 10. References  
-
-1. **“The Prompt Report”** – Google AI Blog.  
-2. **“Prompt Engineering”** – OpenAI Cookbook.  
-3. **“Prompt Engineering Techniques”** – Microsoft Learn.  
-4. **“Prompting Guide”** – promptingguide.ai.  
+| **Role Anchoring** | Закрепляет роль/персону, чтобы модель не «дрейфовала» в длинных диалогах. | См. раздел **Appendix_Role_Anchors.md**. |
 
 ---  
 
 *Эта лекция служит вводным модулем, после которого следует более детальное рассмотрение техник и практических примеров.*  
+
+### Related Labs
+- **Lab 2** – Build Your First Prompt (`Lab_2_Build_Your_First_Prompt.ipynb`)
+
+---  
