@@ -3,6 +3,7 @@
 ## 1. Декомпозиция задач для ИИ‑агентов
 
 ### 1.1 Почему декомпозиция важна
+??почему декомпозиция важна и что она дает??
 
 - **Одно действие** – задача должна описываться глаголом («сгенерировать», «проанализировать», «сравнить»)
 - **Ясный контракт** – модель знает, что от неё требуется, и выдаёт предсказуемый результат
@@ -17,8 +18,6 @@
 Формат вывода: [структура ответа, например JSON, Markdown‑таблица].
 ```
 
-#### Example
-#### Пример
 #### Пример
 
 ```
@@ -42,16 +41,12 @@
 | 1 | Ты — senior Python‑разработчик.<br>Контекст: CSV содержит столбцы `name`, `age`.<br>Задача: прочитать CSV и вернуть список словарей `{name, age}`.<br>Формат вывода: JSON‑массив. |
 | 2 | Ты — senior Python‑разработчик.<br>Контекст: получен массив из шага 1.<br>Задача: отфильтровать элементы, где `age` > 18.<br>Формат вывода: JSON‑массив. |
 | 3 | Ты — senior Python‑разработчик.<br>Контекст: отфильтрованный массив из шага 2.<br>Задача: вывести его как строку JSON.<br>Формат вывода: строка JSON. |
-
-## 2. Retrieval‑Augmented Generation (RAG)
 ## 2. Генерация с дополнением извлечёнными данными (RAG)
 
-### 2.1 What is RAG?
 ### 2.1 Что такое RAG?
 
 RAG сочетает **ретривер** (поиск по коллекции документов) с **генератором** (LLM). Ретривер находит релевантные фрагменты, которые затем внедряются в промпт как дополнительный контекст.
 
-#### Why use RAG?
 #### Зачем использовать RAG?
 
 - **Up‑to‑date information** – the model can answer questions about recent events.  
@@ -60,26 +55,13 @@ RAG сочетает **ретривер** (поиск по коллекции д
 - **Предметная специфика** – вы можете предоставлять закрытую документацию, спецификации API, кодовые базы.
 - **Меньше галлюцинаций** – модель подкрепляет ответ реальным текстом.
 
-### 2.2 Basic RAG workflow
 ### 2.2 Базовый рабочий процесс RAG
 
-1. **Query** – the user’s question.  
-2. **Retriever** – e.g., BM25, dense vector search (FAISS, Elasticsearch). Returns top‑k passages.  
-3. **Prompt construction** – prepend retrieved passages to the user prompt, optionally with a system prompt that explains the role of the passages.  
-![RAG Architecture](images/lecture03_rag_architecture.png "RAG Architecture: Query → Retriever (Vector Search) → Top-k Passages → Prompt Construction → LLM Generator → Answer")
-
-![RAG Workflow Steps](images/lecture03_rag_workflow.png "RAG Workflow: 1. Query 2. Retriever 3. Prompt Construction 4. Generation")
-
-1. **Query** – the user’s question.
-2. **Retriever** – e.g., BM25, dense vector search (FAISS, Elasticsearch). Returns top‑k passages.
-3. **Prompt construction** – prepend retrieved passages to the user prompt, optionally with a system prompt that explains the role of the passages.
-4. **Generation** – LLM produces the final answer.
 1. **Запрос** – вопрос пользователя.
 2. **Ретривер** – например, BM25, плотный векторный поиск (FAISS, Elasticsearch). Возвращает top‑k фрагментов.
 3. **Построение промпта** – добавьте извлечённые фрагменты к пользовательскому промпту, опционально с системным промптом, объясняющим их роль.
 4. **Генерация** – LLM выдаёт финальный ответ.
 
-### 2.3 Implementation sketch (Python)
 ### 2.3 Схема реализации (Python)
 
 ```python
@@ -106,19 +88,14 @@ def generate_answer(query):
     return response.choices[0].message.content
 ```
 
-### 2.4 Tips & pitfalls (RAG)
 ### 2.4 Советы и подводные камни (RAG)
 
-| Tip | Reason |
-|-----|--------|
-| **Limit the number of passages** (3‑5) | Keeps token usage low and reduces noise. |
-| **Add a clear instruction** that passages are *authoritative* | Prevents the model from ignoring them. |
-| **Validate the final output** (JSON schema, unit tests) | Guarantees that retrieved data was used correctly. |
-| **Refresh the index** when documents change | Keeps the knowledge base current. |
-| **Ограничьте количество фрагментов** (3‑5) | Держит потребление токенов низким и уменьшает шум |
-| **Добавьте чёткую инструкцию**, что фрагменты *авторитетны* | Предотвращает игнорирование их моделью |
-| **Валидируйте итоговый вывод** (JSON‑схема, юнит‑тесты) | Гарантирует, что извлечённые данные использованы правильно |
-| **Обновляйте индекс** при изменении документов | Поддерживает базу знаний актуальной |
+| Tip                                                           | Reason                                                     |
+| ------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Ограничьте количество фрагментов** (3‑5)                    | Держит потребление токенов низким и уменьшает шум          |
+| **Добавьте чёткую инструкцию**, что фрагменты *авторитетны*   | Предотвращает игнорирование их моделью                     |
+| **Валидируйте итоговый вывод** (JSON‑схема, юнит‑тесты)       | Гарантирует, что извлечённые данные использованы правильно |
+| **Обновляйте индекс** при изменении документов                | Поддерживает базу знаний актуальной                        |
 
 ## 3. Комбинирование декомпозиции и RAG
 
@@ -131,15 +108,3 @@ def generate_answer(query):
 3. **Шаг 3** – Извлеките руководства по безопасности, затем попросите модель зааудить сгенерированный код
 
 Этот паттерн даёт высоко обоснованные, модульные решения, которые легче тестировать и верифицировать.
-
----  
-
-*Используйте шаблон декомпозиции для структурирования сложных запросов и обогащайте каждый атомарный шаг RAG, когда нужны внешние факты.*
-
-*Use the decomposition template to structure complex requests, and enrich each atomic step with RAG when external facts are required.*  
-
-
-
-
-
-![Decomposition + RAG Pipeline](images/lecture03_decomposition_rag_pipeline.png "Декомпозиция + RAG: На каждом шаге извлекается релевантный контекст → Обработка → Передача к следующему шагу")
