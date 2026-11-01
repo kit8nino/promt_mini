@@ -1,90 +1,90 @@
-# Lecture 04 – Ethics, Safety, and Evaluation of LLM Outputs  
+# Лекция 04 — Этика, безопасность и оценка результатов работы больших языковых моделей  
 
-## 1. Ethics and Safety in Generative AI  
+## 1. Этика и безопасность в сфере генеративного ИИ  
 
-### 1.1 Why ethics matters  
+### 1.1 Почему этика важна  
 
-Large language models are powerful but can cause real‑world harm if misused.  
-- **Bias** – models inherit societal biases present in training data.  
-- **Privacy** – they may regurgitate personally identifiable information (PII).  
-- **Misinformation** – hallucinations can spread false facts.  
-- **Security** – prompts can be crafted to produce malicious code or instructions.  
+Большие языковые модели обладают мощным потенциалом, но при неправильном использовании могут причинить реальный вред.  
+- **Предвзятость** — модели наследуют социальные предубеждения, присутствующие в обучающих данных.  
+- **Конфиденциальность** — они могут выдавать информацию, позволяющую установить личность (PII).  
+- **Дезинформация** — галлюцинации могут распространять ложные факты.  
+- **Безопасность** — с помощью подсказок можно создать вредоносный код или инструкции.  
 
-### 1.2 Types of risk  
+### 1.2 Виды рисков  
 
-| Risk category | Description | Example |
+| Категория риска | Описание | Пример |
 |--------------|-------------|---------|
-| **Bias & Fairness** | Systematic prejudice against protected groups. | Model consistently associates certain jobs with a gender. |
-| **Privacy Leakage** | Generation of user‑specific data that was present in training corpora. | Outputting a real email address that appeared in a public forum. |
-| **Hallucination / Misinformation** | Confidently stating false statements. | Claiming a nonexistent scientific law. |
-| **Malicious Use** | Generating phishing emails, code exploits, or disallowed content. | Producing a script that bypasses authentication. |
-| **Environmental Impact** | Excessive compute for fine‑tuning or inference. | Running large batch jobs without cost/energy awareness. |
+| **Предвзятость и несправедливость** | Систематическое проявление предвзятого отношения к защищенным группам. | Модель последовательно ассоциирует определенные профессии с определенным полом. |
+| **Утечка конфиденциальной информации** | Генерация персональных данных, которые присутствовали в обучающих корпусах. | Вывод реального адреса электронной почты, который был опубликован на публичном форуме. |
+| **Галлюцинации / дезинформация** | Уверенное изложение ложных утверждений. | Утверждение о существовании несуществующего научного закона. |
+| **Злонамеренное использование** | Генерация фишинговых писем, эксплойтов для кода или запрещенного контента. | Создание скрипта, обходящего аутентификацию. |
+| **Воздействие на окружающую среду** | Чрезмерные вычислительные ресурсы для тонкой настройки или логического вывода. | Выполнение больших пакетных заданий без учета затрат и энергопотребления. |
 
-### 1.3 Mitigation techniques  
+### 1.3 Методы снижения рисков  
 
-1. **Dataset curation** – filter out hateful, toxic, or PII‑containing text.  
-2. **Bias testing** – use benchmark suites (e.g., `StereoSet`, `BiasBench`) and report metrics.  
-3. **Prompt safeguards** – prepend system prompts that forbid disallowed content.  
-4. **Output filtering** – post‑process with classifiers (toxicity, PII detectors).  
-5. **Human‑in‑the‑loop review** – especially for high‑risk domains (medical, legal).  
-6. **Rate limiting & usage monitoring** – detect abuse patterns.  
-7. **Model distillation** – smaller, purpose‑trained models reduce attack surface.  
+1. **Курирование датасетов** — фильтрация текстов, содержащих оскорбления, токсичный контент или персональные данные.   
+2. **Тестирование на предвзятость** — используйте наборы тестов (например, `StereoSet`, `BiasBench`) и собирайте метрики.   
+3. **Защита от предвзятости в промпт-скриптах** — добавляйте в системные промпт-скрипты запреты на запрещенный контент.   
+4. **Фильтрация выходных данных** — постобработка с помощью классификаторов (для выявления токсичности и персональных данных).   
+5. **Участие человека в процессе** — особенно важно для областей с высоким уровнем риска (медицина, юриспруденция).   
+6. **Ограничение скорости и мониторинг использования** — выявление злоупотреблений.   
+7. **Дистилляция моделей** — использование более компактных моделей, обученных для конкретных целей, снижает уязвимость к атакам.   
 
-### 1.4 Practical checklist for developers  
+### 1.4 Практический чек-лист для разработчиков  
 
-- [ ] Have you added a **system prompt** that explicitly bans illegal or harmful content?  
-- [ ] Do you run **automated tests** for bias (e.g., gendered occupation prompts)?  
-- [ ] Is **PII detection** enabled on model outputs before storage or display?  
-- [ ] Are **rate limits** configured on your API endpoints?  
-- [ ] Have you documented **fallback behavior** when the model refuses to answer?  
-- [ ] Do you log **prompt‑output pairs** for auditability (respecting privacy)?  
+- [ ] Добавили ли вы **системную подсказку**, которая явно запрещает использование запрещенного или вредоносного контента?  
+- [ ] Проводите ли вы **автоматизированные тесты** на предвзятость (например, с использованием гендерных подсказок о профессиях)?  
+- [ ] Включена ли **проверка на персональные данные** в выходных данных модели перед их сохранением или отображением?  
+- [ ] Настроены ли **ограничения на количество запросов** для ваших конечных точек API?  
+- [ ] Задокументировали ли вы **поведение в случае отказа** модели отвечать на запрос?  
+- [ ] Записываете ли вы **пары «промпты — выходные данные»** для возможности аудита (с соблюдением конфиденциальности)?  
 
-## 2. Evaluation and Self‑Critique  
+## 2. Оценка и самокритика  
 
-### 2.1 Why evaluation matters  
+### 2.1 Почему важна оценка  
 
-Even with a perfect prompt, LLMs can produce **hallucinations**, syntax errors, or sub‑optimal solutions. Systematic evaluation helps you:
+Даже при использовании идеального промпта большие языковые модели могут выдавать **галлюцинации**, синтаксические ошибки или неоптимальные решения. Систематическая оценка поможет вам:
 
-- Detect factual errors.  
-- Verify that the output conforms to the required format (JSON, Markdown, etc.).  
-- Improve the prompt iteratively.  
+- выявить фактические ошибки.  
+- убедиться, что выходные данные соответствуют требуемому формату (JSON, Markdown и т. д.).  
+- итеративно улучшать промпт.  
 
-### 2.2 Built‑in evaluation techniques  
+### 2.2 Встроенные методы оценки  
 
-| Technique | How it works | When to use |
+| Метод | Принцип работы | Когда использовать |
 |-----------|--------------|-------------|
-| **Self‑Evaluation** | After generating the answer, ask the model to review its own output. | Quick sanity check, especially for code or JSON. |
-| **Critic Prompt** | Provide a second prompt that asks the model to critique the previous answer. | When you need a deeper analysis (security review, performance). |
-| **Unit‑Test Generation** | Ask the model to generate tests for its own code and run them. | For code generation tasks. |
-| **Schema Validation** | Validate JSON against a schema (e.g., using `jsonschema` in Python). | Whenever JSON is the contract. |
-| **Metric‑based scoring** | Compute BLEU, ROUGE, or custom similarity scores against a reference. | For natural‑language generation tasks. |
+| **Самооценка** | После генерации ответа попросите модель проанализировать собственный результат. | Быстрая проверка на корректность, особенно для кода или JSON. |
+| **Критический промпт** | Введите второй промпт, в котором попросите модель проанализировать предыдущий ответ. | Если вам нужен более глубокий анализ (проверка безопасности, производительности). |
+| **Генерация юнит‑тестов** | Попросите модель сгенерировать тесты для собственного кода и запустите их. | Для задач по генерации кода. |
+| **Проверка схемы** | Проверьте JSON на соответствие схеме (например, с помощью `jsonschema` в Python). | В тех случаях, когда JSON является контрактом. |
+| **Оценка на основе метрик** | Вычислите BLEU, ROUGE или собственные показатели сходства с эталоном. | Для задач по генерации естественного языка. |
 
-### 2.3 Self‑Evaluation prompt pattern  
+### 2.3 Шаблон промпта для самооценки  
 
 ```
-Assistant: <generated answer>  
+Помощник: <сгенерированный ответ>  
 
-Please evaluate your answer:
-- Is the JSON syntactically valid?
-- Does it contain all required fields?
-- Are there any factual inaccuracies?
-Provide a short verdict (✅ or ❌) and, if ❌, list the problems.
+Пожалуйста, оцените свой ответ:
+- Синтаксически ли корректен JSON?
+- Содержит ли он все обязательные поля?
+- Есть ли фактические неточности?
+Выведите краткий вердикт (✅ или ❌) и, если ❌, перечислите проблемы. 
 ```  
 
-### 2.4 Automated evaluation pipeline (pseudo‑code)
+### 2.4 Автоматизированный конвейер оценки (псевдокод)
 
 ```python
 def generate_and_check(prompt):
     answer = llm.complete(prompt)
-    eval_prompt = f"{answer}\n\nPlease evaluate your answer and return a JSON verdict."
+    eval_prompt = f"{answer}\n\nПожалуйста, оцените свой ответ и выведите вердикт в формате JSON."
     verdict = llm.complete(eval_prompt)
     return answer, verdict
 ```
 
-Integrate this function into CI/CD pipelines for generated code.
+Интегрируйте эту функцию в конвейеры CI/CD для сгенерированного кода. 
 
-### 2.5 Best practices  
+### 2.5 Рекомендации  
 
-- **Never trust the first output** – always run at least one evaluation step.  
-- **Separate evaluation from generation** – keep the two prompts distinct to avoid the model “double‑checking” its own mistakes.  
-- **Log both the answer and the evaluation** for later analysis.  
+- **Никогда не доверяйте первому результату** — всегда выполняйте хотя бы один этап оценки.   
+- **Отделяйте оценку от генерации** — используйте разные промпт‑ы, чтобы модель не «перепроверяла» собственные ошибки.   
+- **Записывайте и ответ, и оценку** для последующего анализа.
