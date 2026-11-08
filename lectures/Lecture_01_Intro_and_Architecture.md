@@ -233,3 +233,10 @@ System: Ты — senior backend‑разработчик. Твоя задача 
 - **Системный промпт** = начальное состояние / приор фильтра.
 
 Далее, в [[Lecture_02_Prompt_Engineering|Лекция 02 – Промпт‑инжиниринг: принципы, шаблоны, стиль и техники]], мы перейдём от архитектуры к инженерной дисциплине составления промптов: **четырёхкомпонентному шаблону**, стилю и каталогу техник (Few-Shot, CoT, RAG, чейнинг и др.).
+
+## Рекомендуемая литература
+
+- [1] Vaswani A. et al. Attention Is All You Need.
+- [2] Su J. et al. RoFormer: Enhanced Transformer with Rotary Position Embedding.
+- [4] OpenAI. GPT-4 Technical Report.
+- [6] Ji Z. et al. Survey of Hallucination in Natural Language Generation.
