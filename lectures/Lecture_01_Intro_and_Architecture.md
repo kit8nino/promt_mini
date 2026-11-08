@@ -175,13 +175,13 @@ $$ Q_m = Q_0 \cdot e^{i m \theta}, \quad K_m = K_0 \cdot e^{i m \theta} $$
 #### RoPE: относительное позиционирование
 ```mermaid
 flowchart TD
-    Q0[Q_0: базовый запрос] --> RotQ[Умножение на e^{i m θ_d}]
-    K0[K_0: базовый ключ] --> RotK[Умножение на e^{i m θ_d}]
+    Q0[Q_0: базовый запрос] --> RotQ["Умножение на e ^ (i*m*θ_d)"]
+    K0[K_0: базовый ключ] --> RotK["Умножение на e ^ (i*m*θ_d)"]
     RotQ --> Qm[Q_m: повернутый запрос]
     RotK --> Km[K_m: повернутый ключ]
     Qm --> Dot[Q_m · K_n^T]
     Km --> Dot
-    Dot --> Cos[∝ cos((m-n)θ_d)]
+    Dot --> Cos["∝ cos ((m-n)θ_d)"]
     Cos --> Rel[Зависит только от m-n]
     style Q0 fill:#e3f2fd
     style K0 fill:#e3f2fd
@@ -237,7 +237,7 @@ System: Ты — senior backend‑разработчик. Твоя задача 
 
 ## Рекомендуемая литература
 
-- [1] Vaswani A. et al. Attention Is All You Need.
-- [2] Su J. et al. RoFormer: Enhanced Transformer with Rotary Position Embedding.
-- [4] OpenAI. GPT-4 Technical Report.
-- [6] Ji Z. et al. Survey of Hallucination in Natural Language Generation.
+[1] Vaswani A. et al. Attention Is All You Need.
+[2] Su J. et al. RoFormer: Enhanced Transformer with Rotary Position Embedding.
+[4] OpenAI. GPT-4 Technical Report.
+[6] Ji Z. et al. Survey of Hallucination in Natural Language Generation.

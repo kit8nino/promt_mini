@@ -33,14 +33,14 @@
 Формат вывода: JSON‑массив.
 ```
 
-### 1.3 Decomposition Workflow
+### 1.3 Рабочий процесс декомпозиции
 
-1. **Identify the final goal** (what the user ultimately wants).  
-2. **Break it into atomic sub‑tasks** – each satisfies the template above.  
-3. **Chain the sub‑tasks**: feed the output of step N as the input to step N+1.  
-4. **Specify the output format for every step** – this simplifies parsing and aggregation.
+1. **Определите конечную цель**.
+2. **Разбейте ее на элементарные подзадачи** — каждая из них соответствует приведенному выше шаблону.  
+3. **Объедините подзадачи в цепочку**: используйте результат шага N в качестве входных данных для шага N+1.  
+4. **Укажите формат вывода для каждого шага** — это упростит анализ и объединение данных.
 
-#### Full Example (CSV → Filter → JSON string)
+#### Полный пример (CSV → Фильтр → JSON)
 
 | Шаг | Промпт (по шаблону) |
 |-----|---------------------|
@@ -176,9 +176,9 @@ flowchart TD
 2. **Шаг 2** – Извлеките бенчмарки производительности, затем попросите модель предложить оптимизации
 3. **Шаг 3** – Извлеките руководства по безопасности, затем попросите модель зааудить сгенерированный код
 
-### 3.1 Радиофизический пример: Расчёт бюджета линии связи (Link Budget)
+### 3.1 Радиофизический пример: Расчёт  линии связи (Link Budget)
 
-**Целевая задача:** Полный расчёт затухания и запаса по шум для трассы 15 км, 18 GHz, дождь ITU-R P.838.
+**Целевая задача:** Полный расчёт затухания и запаса по шуму для трассы 15 км, 18 GHz, дождь ITU-R P.838.
 
 | Шаг | Подзадача (по шаблону Лекции 02) | RAG-источник |
 |-----|-----------------------------------|--------------|
@@ -215,8 +215,8 @@ flowchart TD
 
 ## Рекомендуемая литература
 
-- [13] Lewis P. et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
-- [15] Robertson S., Zaragoza H. The Probabilistic Relevance Framework: BM25 and Beyond.
-- [16] Johnson J., Douze M., Jégou H. Billion-scale similarity search with GPUs.
-- [18] Reimers N., Gurevych I. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks.
-- [19] International Telecommunication Union. Recommendation ITU-R P.525-4.
+[13] Lewis P. et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
+[15] Robertson S., Zaragoza H. The Probabilistic Relevance Framework: BM25 and Beyond.
+[16] Johnson J., Douze M., Jégou H. Billion-scale similarity search with GPUs.
+[18] Reimers N., Gurevych I. Sentence-BERT: Sentence Embeddings using Siamese BERT Networks.
+[19] International Telecommunication Union. Recommendation ITU-R P.525-4.

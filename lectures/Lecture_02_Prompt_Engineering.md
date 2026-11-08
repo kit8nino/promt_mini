@@ -152,9 +152,9 @@ flowchart LR
 2. **Ask‑Before‑Answer + Self‑Evaluation** — сначала уточняющие вопросы, потом генерация, потом самопроверка.
 3. **RAG + Prompt‑Chaining** — на каждом шаге цепочки свой ретриверный контекст (см. [[Лекция 03]], §3).
 
-## 5. Практический пример промпта (радиофизический)
+## 5. Практический пример промпта
 
-**Задача:** Расчёт затухания в свободном пространстве (FSPL) с Few-Shot + CoT.
+**Задача:** Расчёт затухания радиоволны в свободном пространстве (FSPL) с Few-Shot + CoT.
 
 ```
 System:
@@ -219,62 +219,8 @@ $20\log_{10}(4\pi/c) = 20\log_{10}(4\pi/3\cdot10^8) \approx -147.55$ дБ.
 
 ## Рекомендуемая литература
 
-- [7] Brown T. B. et al. Language Models are Few-Shot Learners.
-- [8] Wei J. et al. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.
-- [9] Wang X. et al. Self-Consistency Improves Chain of Thought Reasoning in Language Models.
-- [10] Madaan A. et al. Self-Refine: Iterative Refinement with Self-Feedback.
-- [12] Schulhoff S. et al. The Prompt Report: A Systematic Survey of Prompting Techniques.
-
-
----
-
-### Mermaid-диаграммы (заменяют внешние PNG)
-
-#### Четырёхкомпонентный шаблон промпта
-```mermaid
-flowchart LR
-    subgraph Prompt [Промпт]
-        C[Контекст / Persona] --> R[Роль]
-        R --> T[Задача / Instruction]
-        T --> F[Формат вывода]
-    end
-    F --> LLM[LLM]
-    LLM --> Out[Структурированный ответ]
-    style Prompt fill:#e3f2fd
-    style Out fill:#e8f5e9
-```
-
-#### Обзор 10 техник (карта)
-```mermaid
-mindmap
-  root((Техники промптинга))
-    Few-Shot
-      "2-5 примеров ввод-вывод"
-      "Калибровка как обучающая выборка"
-    CoT
-      "Пошаговое рассуждение"
-      "think step-by-step"
-    RAG
-      "Внешний контекст из ретривера"
-      "FAISS, BM25, dense retrieval"
-    Prompt-Chaining
-      "Каскад шагов"
-      "Выход N → Вход N+1"
-    Role-Anchoring
-      "Стабильная персона"
-      "System prompt block"
-    Ask-Before-Answer
-      "Уточняющие вопросы"
-      "Clarification loop"
-    Self-Consistency
-      "N запусков -> агрегация"
-      "Медиана / большинство"
-    Self-Evaluation
-      "Самопроверка после генерации"
-      "JSON verdict"
-    Constructive-Criticism
-      "Явная просьба критики"
-    Emotional-Prompting
-      "Повышение важности"
-      "Safety-critical context"
-```
+[7] Brown T. B. et al. Language Models are Few-Shot Learners.
+[8] Wei J. et al. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.
+[9] Wang X. et al. Self-Consistency Improves Chain of Thought Reasoning in Language Models.
+[10] Madaan A. et al. Self-Refine: Iterative Refinement with Self-Feedback.
+[12] Schulhoff S. et al. The Prompt Report: A Systematic Survey of Prompting Techniques.

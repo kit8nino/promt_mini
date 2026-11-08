@@ -76,10 +76,10 @@ flowchart LR
 
 #### Глоссарий терминов безопасности
 
-- **PII (Personally Identifiable Information)** — персонально идентифицируемая информация: имена, адреса, телефоны, email, паспортные данные, IP-адреса. *( См. [GLOSSARY.md](GLOSSARY.md) )*
-- **StereoSet** — бенчмарк для измерения стереотипной предвзятости в языковых моделях (Nadeem et al., 2020) [20]. Состоит из пар предложений: стереотипное / антистереотипное / несвязанное. *( См. [GLOSSARY.md](GLOSSARY.md) )*
-- **BiasBench** — набор тестов для оценки предвзятости по половому, расовым, религиозным и другим признакам. *( См. [GLOSSARY.md](GLOSSARY.md) )*
-- **Дистилляция (Knowledge Distillation)** — обучение малой модели (student) воспроизводить выходы большой модели (teacher) для снижения затрат и поверхности атаки. *( См. [GLOSSARY.md](GLOSSARY.md) )*
+- **PII (Personally Identifiable Information)** — персонально идентифицируемая информация: имена, адреса, телефоны, email, паспортные данные, IP-адреса.
+- **StereoSet** — бенчмарк для измерения стереотипной предвзятости в языковых моделях (Nadeem et al., 2020) [20]. Состоит из пар предложений: стереотипное / антистереотипное / несвязанное.
+- **BiasBench** — набор тестов для оценки предвзятости по половому, расовым, религиозным и другим признакам.
+- **Дистилляция (Knowledge Distillation)** — обучение малой модели (student) воспроизводить выходы большой модели (teacher) для снижения затрат и поверхности атаки.
 
 ### 1.4 Практический чек-лист для разработчиков  
 
@@ -142,8 +142,6 @@ $$ \text{ROUGE-L} = \frac{(1+\beta^2) \cdot \text{LCS}(X,Y)}{|X| + \beta^2 |Y|} 
 
 где $X$ — референс, $Y$ — кандидат, обычно $\beta=1.2$.
 
-*( См. [GLOSSARY.md](GLOSSARY.md) для определений BLEU, ROUGE-L )*
-
 ### 2.3 Шаблон промпта для самооценки  
 
 ```
@@ -202,7 +200,9 @@ def generate_and_check(prompt: str, model: str = "gpt-4o-mini") -> Tuple[str, di
 - **Никогда не доверяйте первому результату** — всегда выполняйте хотя бы один этап оценки.   
 - **Отделяйте оценку от генерации** — используйте разные промпт‑ы, чтобы модель не «перепроверяла» собственные ошибки.   
 - **Записываете и ответ, и оценку** для последующего анализа.   
-### 2.6 Радиофизический пример: Валидация SDR-кода и расчёта распространения
+
+### 2.6 Пример: Валидация SDR-кода и расчёта распространения
+
 **Сценарий:** LLM генерирует Python-код настройки AD9361 (PLL, GAIN, фильтры) + расчёт FSPL для заданной трассы.
 
 | Этап | Метод оценки | Что проверяет | Инструмент |
@@ -237,14 +237,14 @@ flowchart TD
 ```
 Диаграмма показывает полный цикл оценки сгенерированного ответа: после генерации проверяется JSON-схема, затем запускаются юнит-тесты, затем модель сама оценивает результат; при любом FAIL выполняется ретрай с уточнением, а при успешной самопроверке запускаются критический промпт и метрики BLEU/ROUGE, после чего формируется итоговый отчёт PASS/FAIL с метриками.
 
+## Вывод
+
+В этой лекции мы рассмотрели этические риски LLM, методы их снижения и системную оценку качества: Self-Evaluation, критический промпт, генерацию тестов, проверку JSON Schema и метрики BLEU/ROUGE. Автоматизированный пайплайн оценки позволяет встраивать эти проверки в CI/CD и использовать LLM как верифицируемый инструмент.
+
 ## Рекомендуемая литература
 
-- ## Вывод
-
-В этой лекции мы рассмотрели этические риски LLM, методы их снижения и системную оценку качества: Self-Evaluation, критический промпт, генерацию тестов, проверку JSON Schema и метрики BLEU/ROUGE. Автоматизированный пайплайн оценки позволяет встраивать эти проверки в CI/CD и использовать LLM как верифицируемый инструмент в радиофизических расчётах.
-
-- [20] Nadeem M., Bethke A., Reddy S. StereoSet: Measuring Stereotypical Bias in Pretrained Language Models.
-- [21] Papineni K. et al. BLEU: a Method for Automatic Evaluation of Machine Translation.
-- [22] Lin C.-Y. ROUGE: A Package for Automatic Evaluation of Summaries.
-- [23] JSON Schema. JSON Schema Specification.
-- [24] Weidinger L. et al. Ethical and social risks of harm from language models.
+[20] Nadeem M., Bethke A., Reddy S. StereoSet: Measuring Stereotypical Bias in Pretrained Language Models.
+[21] Papineni K. et al. BLEU: a Method for Automatic Evaluation of Machine Translation.
+[22] Lin C.-Y. ROUGE: A Package for Automatic Evaluation of Summaries.
+[23] JSON Schema. JSON Schema Specification.
+[24] Weidinger L. et al. Ethical and social risks of harm from language models.
