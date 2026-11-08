@@ -239,6 +239,10 @@ flowchart TD
 
 ## Рекомендуемая литература
 
+- ## Вывод
+
+В этой лекции мы рассмотрели этические риски LLM, методы их снижения и системную оценку качества: Self-Evaluation, критический промпт, генерацию тестов, проверку JSON Schema и метрики BLEU/ROUGE. Автоматизированный пайплайн оценки позволяет встраивать эти проверки в CI/CD и использовать LLM как верифицируемый инструмент в радиофизических расчётах.
+
 - [20] Nadeem M., Bethke A., Reddy S. StereoSet: Measuring Stereotypical Bias in Pretrained Language Models.
 - [21] Papineni K. et al. BLEU: a Method for Automatic Evaluation of Machine Translation.
 - [22] Lin C.-Y. ROUGE: A Package for Automatic Evaluation of Summaries.

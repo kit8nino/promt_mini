@@ -10,8 +10,6 @@
 
 [4] OpenAI. GPT-4 Technical Report // arXiv. 2023. URL: https://arxiv.org/abs/2303.08774 (дата обращения: 01.06.2025).
 
-[5] Hugging Face. Transformers Documentation // Hugging Face. URL: https://huggingface.co/docs/transformers (дата обращения: 01.06.2025).
-
 [6] Ji Z., Lee N., Frieske R. et al. Survey of Hallucination in Natural Language Generation // ACM Computing Surveys. 2023. Vol. 55, no. 12. URL: https://arxiv.org/abs/2202.03629 (дата обращения: 01.06.2025).
 
 ## Лекция 02 — Промпт-инжиниринг: принципы, шаблоны, стиль и техники
