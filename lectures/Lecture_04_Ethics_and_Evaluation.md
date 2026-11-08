@@ -41,6 +41,39 @@
 6. **Ограничение скорости и мониторинг использования** — выявление злоупотреблений.   
 7. **Дистилляция моделей** — использование более компактных моделей, обученных для конкретных целей, снижает уязвимость к атакам.   
 
+#### Матрица рисков и методов снижения
+```mermaid
+flowchart LR
+    subgraph Risks [Риски]
+        R1[Предвзятость]
+        R2[PII утечка]
+        R3[Галлюцинации]
+        R4[Злонамеренное использование]
+        R5[Экология]
+    end
+    subgraph Mitigations [Методы снижения]
+        M1[Курирование датасетов]
+        M2[StereoSet / BiasBench тесты]
+        M3[Системные промпты-запреты]
+        M4[Фильтрация выходов]
+        M5[Human-in-the-loop]
+        M6[Rate limiting]
+        M7[Дистилляция]
+    end
+    R1 --> M1
+    R1 --> M2
+    R2 --> M1
+    R2 --> M4
+    R3 --> M3
+    R3 --> M5
+    R4 --> M3
+    R4 --> M6
+    R5 --> M7
+    style Risks fill:#ffebee
+    style Mitigations fill:#e8f5e9
+```
+
+
 #### Глоссарий терминов безопасности
 
 - **PII (Personally Identifiable Information)** — персонально идентифицируемая информация: имена, адреса, телефоны, email, паспортные данные, IP-адреса. *( См. [GLOSSARY.md](GLOSSARY.md) )*
@@ -175,6 +208,28 @@ def generate_and_check(prompt: str, model: str = "gpt-4o-mini") -> Tuple[str, di
 | 5 | **Метрики (BLEU/ROUGE)** | Сравнение текстового отчёта с эталонным отчётом инженера | `nltk.translate.bleu_score`, `rouge_score` |
 
 > Полный пайплайн оценки встроен в CI: генерация → JSON Schema → pytest → Self-Eval → Critical Prompt → метрики. См. Mermaid ниже.
+
+#### Пайплайн оценки (generate_and_check + CI/CD)
+```mermaid
+flowchart TD
+    Prompt[Промпт] --> Gen[LLM Generation]
+    Gen --> Answer[Ответ]
+    Answer --> SchemaVal[JSON Schema Validation]
+    SchemaVal -- FAIL --> Fix1[Исправление промпта / ретрай]
+    SchemaVal -- PASS --> Pytest["Unit Tests (pytest)"]
+    Pytest -- FAIL --> Fix2[Исправление кода / ретрай]
+    Pytest -- PASS --> SelfEval[Self-Evaluation Prompt]
+    SelfEval --> Verdict{Вердикт}
+    Verdict -- FAIL --> Fix3[Ретрай с уточнением]
+    Verdict -- PASS --> CritPrompt[Critical Prompt]
+    CritPrompt --> Metrics[BLEU / ROUGE vs Reference]
+    Metrics --> Report[Отчёт: PASS/FAIL + метрики]
+    style Fix1 fill:#ffebee
+    style Fix2 fill:#ffebee
+    style Fix3 fill:#ffebee
+    style Report fill:#e8f5e9
+```
+
 
 ## Вывод
 
