@@ -92,14 +92,14 @@ flowchart TD
 
 **Основные блоки параметров в декодерном трансформере (GPT-стиль):**
 
-| Блок | Форма | Число параметров (на слой) |
-|------|-------|----------------------------|
-| Токенные эмбеддинги | $|\mathcal{V}| \times d_{\text{model}}$ | общие для всех слоёв |
-| Позиционные эмбеддинги (или RoPE) | $T_{\text{max}} \times d_{\text{model}}$ или параметры ротации | общие |
-| Attention Q/K/V проекции | $3 \times d_{\text{model}} \times d_{\text{model}}$ | $3 d_{\text{model}}^2$ |
-| Attention выходная проекция | $d_{\text{model}} \times d_{\text{model}}$ | $d_{\text{model}}^2$ |
-| Feed-Forward Network (FFN) | $d_{\text{model}} \to d_{\text{ff}} \to d_{\text{model}}$ | $2 d_{\text{model}} d_{\text{ff}}$ (обычно $d_{\text{ff}}=4 d_{\text{model}}$) |
-| LayerNorm (2 на слой) | $2 \times d_{\text{model}}$ | $2 d_{\text{model}}$ |
+| Блок                              | Форма                                                          | Число параметров (на слой)                                                     |
+| --------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Токенные эмбеддинги               | $\mathcal{V}\times d_{\text{model}}$                           | общие для всех слоёв                                                           |
+| Позиционные эмбеддинги (или RoPE) | $T_{\text{max}} \times d_{\text{model}}$ или параметры ротации | общие                                                                          |
+| Attention Q/K/V проекции          | $3 \times d_{\text{model}} \times d_{\text{model}}$            | $3 d_{\text{model}}^2$                                                         |
+| Attention выходная проекция       | $d_{\text{model}} \times d_{\text{model}}$                     | $d_{\text{model}}^2$                                                           |
+| Feed-Forward Network (FFN)        | $d_{\text{model}} \to d_{\text{ff}} \to d_{\text{model}}$      | $2 d_{\text{model}} d_{\text{ff}}$ (обычно $d_{\text{ff}}=4 d_{\text{model}}$) |
+| LayerNorm (2 на слой)             | $2 \times d_{\text{model}}$                                    | $2 d_{\text{model}}$                                                           |
 
 **Итого на слой:** $\approx 12 d_{\text{model}}^2$ (при $d_{\text{ff}}=4d_{\text{model}}$).  
 Для GPT-3 175B: $d_{\text{model}}=12288$, 96 слоёв → $\sim 175\cdot10^9$ параметров.
